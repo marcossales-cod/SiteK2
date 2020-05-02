@@ -1,0 +1,110 @@
+
+a:link 
+{ 
+    color: red;
+    text-decoration:none; 
+} 
+
+
+
+.font{
+    font-family: 'Roboto Slab', serif;
+    font: 30px;
+    padding: 15px;
+    text-align: justify;
+    background: #1c86a8;
+    color: white;
+    
+}
+
+#info1{
+
+   border: 10px;
+    height:20px;
+    overflow:hidden;
+}
+
+.btn-aparecer, .btn-desaparecer{
+    
+    background: #fff;
+    border-radius: 5px;
+    color: #000;
+    text-decoration: none;
+}
+
+.btn-aparecer:hover {
+    background: red;
+    width: 5px;
+    color: #fff;
+    border-radius: 5px;
+    
+
+}
+
+.btn-desaparecer:hover{
+    background: red;
+    color: #fff;
+    margin: 0px;
+}
+
+.img{
+    background: white;
+    text-align: left;
+    padding: 13px;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.363);
+    
+}
+
+@media (min-width: 800px){
+    body {
+    background: white;
+    margin: 0;
+    padding: 0px;
+    text-align: center;
+    }
+    
+    #interno {
+    font-family: 'Roboto Slab', serif;
+    text-align: center;    
+    padding: 50PX;
+
+    
+    
+    }
+    }
+    
+    #Form_calculadora{
+    
+   
+    background: #1c86a8;
+    box-shadow: 5px 5px 5px  rgb(0, 0, 0, 0.363) ;
+    color: white;
+    }
+
+    
+   
+    .arredondar{
+    border-radius: 15px;
+    width: 300px;
+    border:  4px;
+    }
+
+    .espaço{
+        font-family: 'Roboto Slab', serif;
+        font-size: 15pt;
+        box-shadow: 5px 5px 5px   rgb(0, 0, 0, 0.363) ;
+        padding: 15px;
+    }
+
+    .btn{
+        padding: 5px;
+        color: red;
+        border-radius: 5px;
+        font-family: 'Roboto Slab', serif;
+        cursor: pointer;
+        background: #fff;   
+        font: 700; 
+        
+    }
+
+    

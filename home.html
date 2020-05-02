@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <script type='text/javascript' src='http://k2web.com.br/basejquery.js'></script>
+    <script src='http://k2web.com.br/placein.js'></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos/styles.css">
+    <title>K2 WEB</title>
+
+
+</head>
+<script>
+    function aumenta(id) {
+        document.getElementById(id).style.height = 'auto';
+        document.getElementById(id).style.overflow = 'none';
+
+    }
+    function reduz(id) {
+        document.getElementById(id).style.height = '50px';
+        document.getElementById(id).style.overflow = 'none';
+    }
+</script>
+
+
+<body>
+    <div>
+        <div class="img">
+            <img src='http://www.k2web.com.br/NT_logo.jpg' style='width: 60px;'>
+        </div>
+        <div class="font">
+
+            <B>Orientações para uso da calculadora:</B><BR>
+            Selecione as opções de cada campo e clique no botão "Calcular" para ver a estimativa de valores de
+            implantação e
+            manutenção.<BR>
+            Se não desejar alguma das opções, deixe em branco ou escolha "não". <br><br><br>
+
+            <div id='info1'>
+
+
+                <a href="javascript:aumenta('info1') " class="btn-aparecer">Clique aqui para o help</a><br><br><br><br>
+
+
+
+                Descrição de cada campo:<BR>
+                <B>Implantação de site com até </B>(Exclusivo para desenvolvimento de site. Escolha o
+                número
+                de
+                páginas máximo do site)<BR>
+                <B>Revisão de tags e inserção de SEO em site com até </B>(Para revisão de tags e
+                inserção de
+                SEO
+                em
+                site já existente, de acordo com o número de páginas).<BR>
+                <B>Implantacão de app </B>(Exclusivo para desenvolvimento de app. Escolha o volume de
+                horas
+                de
+                desenvolvimento).<BR>
+                <B>Horas avulsas de implantação</B> (para criação, arte ou programação que não serão
+                utilizadas
+                mensalmente, mas apenas no ínicio do trabalho).<BR>
+                <B>Criação de conteúdo </B>(Exclusivo para desenvolvimento de textos. Cada lauda
+                equivale em
+                média a
+                1400 caracteres).<BR>
+                <B>Tradução/revisão </B>(Exclusivo para tradução ou revisão de texto. Cada lauda
+                equivale em
+                média a
+                1400 caracteres).<BR>
+                <B>SmartMidia </B>Apresentação em audio ou vídeo para divulgação em redes sociais,
+                whatsapp
+                ou
+                site.
+                Os vídeos são com animações simples em resolução reduzida para web.<BR>
+                <B>FeedBack </B>(Ferramenta de identificação de e-mail. Escolha o número de páginas a
+                serem
+                monitoradas).<BR>
+                <B>Limite MailTo diário </B>(Limite de envio de e-mails diários do e-mail
+                marketing).<BR>
+                <B>Horas mensais </B>(Horas mensais para o banco de horas de
+                programação/design/criação/manutenção).<BR>
+                <B>TPE </B>(Tempo de Produção estimado. <a
+                    href='https://www.k2web.com.br/apoiophp.php?sis=site&pag=blog&nc=2293052' target='_blank'>Clique
+                    aqui</a> para ver a TPE de cada serviço).<BR>
+                <B>Chat Alloweb </B>(Chat on-line. A versão básica é somente o atendimento normal, feito
+                pelo
+                próprio cliente. A versão full permite a configuração de mensagens automatizadas (nesse
+                caso
+                especificar horas extras de implantação). A versão com atendimento inclui o serviço de
+                uma
+                pessoa de
+                nossa equipe para realizar o atendimento em horário comercial.<BR>
+                <B>CRM PlaceIn (</B>Ferramenta de CRM para cadastro de clientes).<BR>
+                <B>AutoPosts </B>(Serviço de postagem automatizada em Twitter Facebook e/ou
+                Linkedin).<BR>
+                <B>AutoResponder </B>(Serviço de resposta automática para os visitantes do site).<BR>
+                <B>Administração anúncios </B>(Serviço de administração de anúncios para AdWords, Redes
+                Sociais
+                e/ou
+                Retargeting Ads).<BR>
+                <B>Profissional Exclusivo </B>(Opção para contratação e treinamento de um profissional
+                exclusivo
+                para atender e realizar os serviços de marketing digital).<BR>
+                <B>Geração de conteúdo </B>(Serviço mensal de geração de conteúdo para blogs, e-mail
+                marketing,
+                e-book, etc...).<BR>
+                <B>Tradução </B>(Serviço mensal de tradução ou revisão).<BR>
+                <BR><BR><a href=javascript:reduz('info1') class="btn-desaparecer">Clique aqui para fechar o
+                    help<a><BR><BR><br>
+            </div>
+        </div>
+
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+        <!--tirando esse link toda a formatação vai embora-->
+        <link href='http://k2web.com.br/geraform.css' rel='stylesheet' type='text/css' />
+        <script>
+            function vai(objeto) { $(objeto).animate({ left: 0 }); };
+            function volta(objeto) { $(objeto).animate({ left: -5000 }); };
+            function vcl(cor) {
+                var form = $('#Form_calculadora');
+                form.find('textarea,input ,select').each(function () {
+                    var divr = $(this).attr('name');
+                    $('#label_' + divr).css('color', cor);
+                });
+            }
+            function mask(o, f) {
+                v_obj = o;
+                v_fun = f;
+                setTimeout('execmask()', 1)
+            };
+            function execmask() {
+                v_obj.value = v_fun(v_obj.value)
+            };
+            function msonum2(value) {
+                if (value.indexOf('-') == 0) {
+                    var neg = '-';
+                } else {
+                    var neg = '';
+                }
+                value = value.replace(/[^0-9.,]*/g, '');
+                value = value.replace(/\.{2,}/g, '.');
+                value = value.replace(/\.,/g, ',');
+                value = value.replace(/\,\./g, ',');
+                value = value.replace(/\,{2,}/g, ',');
+                value = value.replace(/\.[0-9]+\./g, '.');
+                return (neg + value);
+            }
+            function msonum(v) {
+                if (v.indexOf('-') == 0) {
+                    var neg = '-';
+                } else {
+                    var neg = '';
+                }
+                v = v.replace(/\D/g, '');
+                v = v.substring(0, 100);
+                v = v.replace(/(\d)$/, '$1');
+                return (neg + v);
+            }
+            function mcep(v) {
+                v = v.replace(/\D/g, '');
+                v = v.substring(0, 8);
+                v = v.replace(/^(\d{5})(\d)/g, '$1-$2');
+                v = v.replace(/(\d)(\d{3})$/, '$1-$2');
+                return v;
+            }
+            function mphone(v) {
+                v = v.replace(/\D/g, '');
+                v = v.substring(0, 11);
+                v = v.replace(/^(\d{2})(\d)/g, '($1) $2');
+                v = v.replace(/(\d)(\d{4})$/, '$1-$2');
+                return v;
+            }
+            function mdata(v) {
+                v = v.replace(/\D/g, '');
+                v = v.substring(0, 8);
+                v = v.replace(/(\d{2})(\d{2})(\d)/m, '$1/$2/$3');
+                v = v.replace(/(\d)(\d)(\d{4})$/, '$1/$2/$3');
+                return v;
+            }
+            $('#GFerro').css('visibility', 'hidden');
+            $(document).ready(function () {
+                setTimeout('volta(GFerro)', 0);
+                var checklist = '';
+                $('input[type=checkbox]').each(function () {
+                    if (checklist.indexOf(',' + $(this).attr('name')) == -1) {
+                        checklist += ',' + $(this).attr('name');
+                        getCheckbox($(this).attr('name'));
+                        console.log($(this).attr('name'))
+                    }
+                })
+            });
+            var corantiga = '';
+            /**CAROL**/
+            function getCheckbox(name) {
+                window[name] = '';
+                $('input[name=' + name + ']').each(function () {
+                    //console.log($(this).attr('name'))
+                    if ($(this).is(':checked')) {
+                        window[name] += ',' + $(this).val();
+                    }
+                })
+                //console.log(window[name])
+            }
+            /**CAROL FIM**/
+            function GFenviarForm_calculadora() {
+                $('#Form_calculadora #b_enviar').css('visibility', 'visible');
+                $('.loadingPlaceIn .texto').html('Aguarde - Calculando valores');
+                $('.loadingPlaceIn').fadeIn(500);
+                var valordavariavel = '';
+                var variavelanterior = '';
+                var form = $('#Form_calculadora');
+                var erro = '';
+                var msgerro = '';
+                var formt = 'secaoNTvs=1&';
+                var analisa = '';
+                var arrumacont = '';
+                form.find('textarea,input,select').each(function () {
+                    arrumacont = $(this).val();
+                    if ($(this).attr('name') != 'grupo' && $(this).attr('name') != 'redirectpage') {
+                        if (Array.isArray(arrumacont)) {
+                            arrumacont = arrumacont.join(',');
+                        }
+                        if (arrumacont != null) {
+                            arrumacont = arrumacont.replace(/&/g, '@e@');
+                        }
+                    }
+                    if ($(this).attr('OB') == 'o' && ($(this).val() == '' || $(this).val() == ' ')) {
+                        msgerro += ($(this).attr('NO')) + '<BR>';
+                        var divr = $(this).attr('name');
+                        if (corantiga == '') {
+                            corantiga = $('#label_' + divr).css('color');
+                        }
+                        $('#label_' + divr).css('color', 'red');
+                        erro = 'sim';
+                    } else {
+                        if ($(this).attr('name') != '') {
+                            if ($(this).attr('name') == variavelanterior) {
+                                /**CAROL**/
+                                /* 
+                                if($(this).attr('type')=='checkbox'){
+                                   if($(this).attr('checked')=='checked' || $(this).attr('checked')==true){
+                                     formt+=','+arrumacont;
+                                   }
+                                 }else{ 
+                                     formt+=','+arrumacont;
+                                 } 
+                                 */
+                                /**CAROL FIM**/
+                            } else {
+                                if ($(this).attr('type') == 'checkbox') {
+                                    /**CAROL**/
+                                    /*
+                                    if($(this).attr('checked')=='checked' || $(this).attr('checked')==true){
+                                        formt+='&'+$(this).attr('name')+'='+arrumacont;
+                                    }else{
+                                        formt+='&'+$(this).attr('name')+'=';
+                                    }
+                                    */
+                                    /**CAROL FIM**/
+                                    formt += '&' + $(this).attr('name') + '=' + window[$(this).attr('name')];
+                                } else {
+                                    formt += '&' + $(this).attr('name') + '=' + arrumacont;
+                                }
+                            }
+                            variavelanterior = $(this).attr('name');
+                        }
+                    }
+                });
+                formt += '&utf=utf-8';
+                if (erro == '') {
+                    setTimeout(function () {
+                        $('#Form_calculadora #avisoGF').html('Não foi possível enviar os dados, por favor tente novamente!');
+                        $('#Form_calculadora #b_enviar').css('visibility', 'visible');
+                        $('#b_enviar').css('visibility', 'visible');
+                        $('.loadingPlaceIn').fadeOut(500);
+                    }, 80000);
+                    $('#Form_calculadora #avisoGF').html('Aguarde - Calculando valores');
+                    $.post('http://k2web.com.br/NT_sis.php', formt)
+                        .done(function (data) {
+                            $('#Form_calculadora #avisoGF').html('');
+                            analisa = data.split('|');
+                            if (data.indexOf('OK') != -1) {
+                                analisa[1] = analisa[1].replace('.OK', '.');
+                                $('#Form_calculadora').html(analisa[1]);
+                                $('.loadingPlaceIn').fadeOut(500);
+                            } else {
+                                $('#Form_calculadora #b_enviar').css('visibility', 'visible');
+                                $('#b_enviar').css('visibility', 'visible');
+                                $('.loadingPlaceIn').fadeOut(500);
+                                msgerro = '<FONT COLOR=white ALIGN=center>' + analisa[1] + '</FONT>';
+                                $(GFerro).html(msgerro);
+                                vai(GFerro);
+                                setTimeout('volta(GFerro)', 5000);
+                                setTimeout('vcl(corantiga)', 10000);
+                            }
+                        })
+                } else {
+                    $('#Form_calculadora #b_enviar').css('visibility', 'visible');
+                    $('#b_enviar').css('visibility', 'visible');
+                    $('.loadingPlaceIn').fadeOut(500);
+                    msgerro = '<FONT COLOR=white ALIGN=center>Favor preencher os campos:<BR>' + msgerro + '</FONT>';
+                    $(GFerro).html(msgerro);
+                    vai(GFerro);
+                    setTimeout('volta(GFerro)', 5000);
+                    setTimeout('vcl(corantiga)', 10000);
+                }
+            };
+        </script>
+        <div id='Form_calculadora'>
+            <form name='Form_calculadoraGF' action='javascript:GFenviarForm_calculadora();'>
+                <INPUT TYPE=HIDDEN NAME='chave' VALUE='Geraform'>
+                <INPUT TYPE=HIDDEN NAME='modovariavel' VALUE=''>
+                <div id='destinatarios'>
+                    <INPUT TYPE=HIDDEN NAME='destinatarios' VALUE='|'>
+                </div>
+                <INPUT TYPE=HIDDEN NAME='secaosite' VALUE=''>
+                <INPUT TYPE=HIDDEN NAME='msgok' VALUE='Mensagem enviada com sucesso.'>
+                <INPUT TYPE=HIDDEN NAME='camposgfht'
+                    VALUE='url}Nome no contrato}<B>Implantação</B>}Implantação de site com até}Implantação de ecommerce}Revisão de tags e inserção de SEO em site com até}Sistema Pronto PlaceIn}Implantacão de app}Inclusão do app em loja}Horas avulsas de implantação}Criação de conteúdo}Tradução/revisão}Reuniões virtuais de consultoria}PsicoMarketing}Kutuka - Captura de mailing por segmento}Criação material de apoio}Manual de Identidade}SmartMidia}Captação de imagem}Social Care}SocialInfluencers reviews}SocialInfluencers compartilhamentos}EAD Technology}Sistema cliente oculto}esp}-----------}Parcelas}Prazo}Exclusividade}Pacote emergencial Coronavírus}Moeda}esp}esp}<B>Manutenção</B>}Páginas com FeedBack}Limite MailTo diário}Limpeza de mailling}Contas de email}Limite extra de armazenamento}Limite extra de tráfego de dados}Limite de SMS diário}Horas mensais}Consultoria}Chat Alloweb}Alloweb Whatsapp Business}CRM PlaceIn}AutoPosts}Manutenção Redes Sociais}AutoResponder}Administração anúncios}Testes ABC para anúncios}Canal Youtube}Profissional Exclusivo}Geração de conteúdo}Tradução}SEOpress}Ligações semanais cliente oculto}Servidor}Backup}Número 0800}'>
+                <INPUT id='redirectpage' TYPE=HIDDEN NAME='redirectpage' VALUE=''>
+                <INPUT TYPE=HIDDEN NAME='grupo' VALUE='continua_calculadora_menuselling'>
+                <div id='layout-steps'></div>
+                <div id='rl'><INPUT TYPE=HIDDEN NAME='rl' class="texto" VALUE='k2web.com.br'></div>
+                <div id='nmncntrt'>
+                    <div class='espaço'>Nome no contrato <B>*</B></div><INPUT class='arredondar' TYPE=TEXT
+                        NAME='nmncntrt' VALUE='' MAXLENGHT=200 OB='o' required NO='Nome no contrato'>
+                </div>
+                <div id='<b>mplntc<b>'>
+                    <div class='espaço'><B>Implantação</B></div>
+                </div>
+                <div class='espaço'>
+                    <div id='label_mplntcdstcmt'>Implantação de site com até</div><SELECT class='arredondar' size=1
+                        OB='n' NO='Implantação de site com até' name='mplntcdstcmt'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='1 página'>1 página</OPTION>
+                        <OPTION value='2 páginas'>2 páginas</OPTION>
+                        <OPTION value='3 páginas'>3 páginas</OPTION>
+                        <OPTION value='4 páginas'>4 páginas</OPTION>
+                        <OPTION value='5 páginas'>5 páginas</OPTION>
+                        <OPTION value='6 páginas'>6 páginas</OPTION>
+                        <OPTION value='7 páginas'>7 páginas</OPTION>
+                        <OPTION value='8 páginas'>8 páginas</OPTION>
+                        <OPTION value='9 páginas'>9 páginas</OPTION>
+                        <OPTION value='10 páginas'>10 páginas</OPTION>
+                        <OPTION value='até 15 páginas'>até 15 páginas</OPTION>
+                        <OPTION value='até 20 páginas'>até 20 páginas</OPTION>
+                        <OPTION value='até 30 páginas'>até 30 páginas</OPTION>
+                        <OPTION value='até 50 páginas'>até 50 páginas</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_mplntcdcmmrc'>Implantação de ecommerce</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Implantação de ecommerce' name='mplntcdcmmrc'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='somente sistema de pagamento PayPal ou similar'>somente sistema de pagamento
+                            PayPal
+                            ou
+                            similar</OPTION>
+                        <OPTION value='SmartLoja simples'>SmartLoja simples</OPTION>
+                        <OPTION value='completo com carrinho de compras; pagamento PayPal ou similar e estoque'>completo
+                            com
+                            carrinho de compras; pagamento PayPal ou similar e estoque</OPTION>
+                        <OPTION
+                            value='completo com carrinho de compras; pagamento operadora; estoque e integração MarketPlace'>
+                            completo com carrinho de compras; pagamento operadora; estoque e integração MarketPlace
+                        </OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_rvsdtgsnsrcdsmstcmt'>Revisão de tags e inserção de SEO em site com até</div><SELECT
+                        class='arredondar' size=1 OB='n' NO='Revisão de tags e inserção de SEO em site com até'
+                        name='rvsdtgsnsrcdsmstcmt'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='1 página'>1 página</OPTION>
+                        <OPTION value='2 páginas'>2 páginas</OPTION>
+                        <OPTION value='3 páginas'>3 páginas</OPTION>
+                        <OPTION value='4 páginas'>4 páginas</OPTION>
+                        <OPTION value='5 páginas'>5 páginas</OPTION>
+                        <OPTION value='6 páginas'>6 páginas</OPTION>
+                        <OPTION value='7 páginas'>7 páginas</OPTION>
+                        <OPTION value='8 páginas'>8 páginas</OPTION>
+                        <OPTION value='9 páginas'>9 páginas</OPTION>
+                        <OPTION value='10 páginas'>10 páginas</OPTION>
+                        <OPTION value='até 15 páginas'>até 15 páginas</OPTION>
+                        <OPTION value='até 20 páginas'>até 20 páginas</OPTION>
+                        <OPTION value='até 30 páginas'>até 30 páginas</OPTION>
+                        <OPTION value='até 50 páginas'>até 50 páginas</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_sstmprntplcn'>Sistema Pronto PlaceIn</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Sistema Pronto PlaceIn' name='sstmprntplcn'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Academia'>Academia</OPTION>
+                        <OPTION value='Salão Beleza'>Salão Beleza</OPTION>
+                        <OPTION value='Corretor Imobiliário'>Corretor Imobiliário</OPTION>
+                        <OPTION value='Pet Shop'>Pet Shop</OPTION>
+                        <OPTION value='ARC Premium'>ARC Premium</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_mplntcdpp'>Implantacão de app</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Implantacão de app' name='mplntcdpp'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='5 horas'>5 horas</OPTION>
+                        <OPTION value='10 horas'>10 horas</OPTION>
+                        <OPTION value='20 horas'>20 horas</OPTION>
+                        <OPTION value='50 horas'>50 horas</OPTION>
+                        <OPTION value='100 horas'>100 horas</OPTION>
+                        <OPTION value='200 horas'>200 horas</OPTION>
+                        <OPTION value='300 horas'>300 horas</OPTION>
+                        <OPTION value='400 horas'>400 horas</OPTION>
+                        <OPTION value='500 horas'>500 horas</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_nclsdppmlj'>Inclusão do app em loja</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Inclusão do app em loja' name='nclsdppmlj'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='iOS'>iOS</OPTION>
+                        <OPTION value='Android'>Android</OPTION>
+                        <OPTION value='iOS e Android'>iOS e Android</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_hrsvlssdmplntc'>Horas avulsas de implantação</div><SELECT class='arredondar' size=1
+                        OB='n' NO='Horas avulsas de implantação' name='hrsvlssdmplntc'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='1'>1</OPTION>
+                        <OPTION value='2'>2</OPTION>
+                        <OPTION value='3'>3</OPTION>
+                        <OPTION value='4'>4</OPTION>
+                        <OPTION value='5'>5</OPTION>
+                        <OPTION value='6'>6</OPTION>
+                        <OPTION value='7'>7</OPTION>
+                        <OPTION value='8'>8</OPTION>
+                        <OPTION value='9'>9</OPTION>
+                        <OPTION value='10'>10</OPTION>
+                        <OPTION value='12'>12</OPTION>
+                        <OPTION value='15'>15</OPTION>
+                        <OPTION value='20'>20</OPTION>
+                        <OPTION value='25'>25</OPTION>
+                        <OPTION value='30'>30</OPTION>
+                        <OPTION value='35'>35</OPTION>
+                        <OPTION value='40'>40</OPTION>
+                        <OPTION value='45'>45</OPTION>
+                        <OPTION value='50'>50</OPTION>
+                        <OPTION value='60'>60</OPTION>
+                        <OPTION value='70'>70</OPTION>
+                        <OPTION value='80'>80</OPTION>
+                        <OPTION value='90'>90</OPTION>
+                        <OPTION value='100'>100</OPTION>
+                        <OPTION value='150'>150</OPTION>
+                        <OPTION value='200'>200</OPTION>
+                        <OPTION value='250'>250</OPTION>
+                        <OPTION value='300'>300</OPTION>
+                        <OPTION value='350'>350</OPTION>
+                        <OPTION value='400'>400</OPTION>
+                        <OPTION value='450'>450</OPTION>
+                        <OPTION value='500'>500</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_crcdcntd'>Criação de conteúdo</div><SELECT class='arredondar' size=1 OB=' n'
+                        NO='Criação de conteúdo' name='crcdcntd'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='até 5 laudas'>até 5 laudas</OPTION>
+                        <OPTION value='até 10 laudas'>até 10 laudas</OPTION>
+                        <OPTION value='até 20 laudas'>até 20 laudas</OPTION>
+                        <OPTION value='até 50 laudas'>até 50 laudas</OPTION>
+                        <OPTION value='até 100 laudas'>até 100 laudas</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_trdcrvs'>Tradução/revisão</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Tradução/revisão' name='trdcrvs'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='até 5 laudas'>até 5 laudas</OPTION>
+                        <OPTION value='até 10 laudas'>até 10 laudas</OPTION>
+                        <OPTION value='até 20 laudas'>até 20 laudas</OPTION>
+                        <OPTION value='até 50 laudas'>até 50 laudas</OPTION>
+                        <OPTION value='até 100 laudas'>até 100 laudas</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_rnsvrtsdcnsltr'>Reuniões virtuais de consultoria</div><SELECT class='arredondar'
+                        size=1 OB='n' NO='Reuniões virtuais de consultoria' name='rnsvrtsdcnsltr'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='1'>1</OPTION>
+                        <OPTION value='2'>2</OPTION>
+                        <OPTION value='3'>3</OPTION>
+                        <OPTION value='4'>4</OPTION>
+                        <OPTION value='5'>5</OPTION>
+                        <OPTION value='6'>6</OPTION>
+                        <OPTION value='7'>7</OPTION>
+                        <OPTION value='8'>8</OPTION>
+                        <OPTION value='9'>9</OPTION>
+                        <OPTION value='10'>10</OPTION>
+                        <OPTION value='11'>11</OPTION>
+                        <OPTION value='12'>12</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_pscmrktng'>PsicoMarketing <a href='http://k2web.com.br/app_psicomarketing'
+                            target='_blank'><img src='https://www.k2web.com.br/help.png' style='width:10px;'></a></div>
+                    <SELECT class='arredondar' size=1 OB='n' NO='PsicoMarketing' name='pscmrktng'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='PsicoBasic'>PsicoBasic</OPTION>
+                        <OPTION value='PsicoAdvance'>PsicoAdvance</OPTION>
+                        <OPTION value='PsicoPremium'>PsicoPremium</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_ktkcptrdmlngprsgmnt'>Kutuka - Captura de mailing por segmento</div><SELECT
+                        class='arredondar' size=1 OB='n' NO='Kutuka - Captura de mailing por segmento'
+                        name='ktkcptrdmlngprsgmnt'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='até 5000 emails'>até 5000 emails</OPTION>
+                        <OPTION value='até 10000 emails'>até 10000 emails</OPTION>
+                        <OPTION value='até 50000 emails'>até 50000 emails</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_crcmtrldp'>Criação material de apoio</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Criação material de apoio' name='crcmtrldp'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Logo; cartão de visita; assinatura de email; folder até 4 páginas'>Logo; cartão
+                            de
+                            visita; assinatura de email; folder até 4 páginas</OPTION>
+                        <OPTION value='Logo; cartão de visita; assinatura de email'>Logo; cartão de visita; assinatura
+                            de
+                            email
+                        </OPTION>
+                        <OPTION value='cartão de visita; assinatura de email'>cartão de visita; assinatura de email
+                        </OPTION>
+                        <OPTION value='folder até 4 páginas'>folder até 4 páginas</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_mnlddntdd'>Manual de Identidade</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Manual de Identidade' name='mnlddntdd'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Simplificado'>Simplificado</OPTION>
+                        <OPTION value='Completo'>Completo</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_smrtmd'>SmartMidia</div><SELECT class='arredondar' size=1 OB='n' NO='SmartMidia'
+                        name='smrtmd'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Somente narração'>Somente narração</OPTION>
+                        <OPTION value='Narração com animação simples'>Narração com animação simples</OPTION>
+                        <OPTION value='Video Banner sem audio'>Video Banner sem audio</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_cptcdmgm'>Captação de imagem</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Captação de imagem' name='cptcdmgm'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value='1 camera'>1 camera</OPTION>
+                        <OPTION value='2 cameras'>2 cameras</OPTION>
+                        <OPTION value='2 cameras e drone'>2 cameras e drone</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_sclcr'>Social Care <a
+                            href='javascript:alert("Revisão e criação das contas de até 4 redes sociais (Instagram; Facebook; Linkedin; Twitte; Google Business)")'><img
+                                src='https://www.k2web.com.br/help.png' style='width:10px;'></a></div><SELECT
+                        class='arredondar' size=1 OB='n' NO='Social Care' name='sclcr'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='revisão ou criação de até 2 redes sociais'>revisão ou criação de até 2 redes
+                            sociais
+                        </OPTION>
+                        <OPTION value='revisão ou criação de até 4 redes sociais'>revisão ou criação de até 4 redes
+                            sociais
+                        </OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_sclnflncrsrvws'>Social Influencers reviews <a
+                            href='https://www.socialinfluencers.com.br' target='_blank'><img
+                                src='https://www.k2web.com.br/help.png' style='width:10px;'></a></div>
+                    <SELECT class='arredondar' size=1 OB='n' NO='SocialInfluencers reviews' name='sclnflncrsrvws'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='10'>10</OPTION>
+                        <OPTION value='20'>20</OPTION>
+                        <OPTION value='50'>50</OPTION>
+                        <OPTION value='100'>100</OPTION>
+                        <OPTION value='200'>200</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_sclnflncrscmprtlhmnts'>Social Influencers compartilhamentos <a
+                            href='https://www.socialinfluencers.com.br' target='_blank'><img
+                                src='https://www.k2web.com.br/help.png' style='width:10px;'></a></div><SELECT
+                        class='arredondar' size=1 OB='n' NO='SocialInfluencers compartilhamentos'
+                        name='sclnflncrscmprtlhmnts'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='10'>10</OPTION>
+                        <OPTION value='20'>20</OPTION>
+                        <OPTION value='50'>50</OPTION>
+                        <OPTION value='100'>100</OPTION>
+                        <OPTION value='200'>200</OPTION>
+                        <OPTION value='500'>500</OPTION>
+                        <OPTION value='1000'>1000</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_dtchnlgy'>EAD Technology <a href='https://ead.technology/app_smartcurso'
+                            target='_blank'><img src='https://www.k2web.com.br/help.png' style='width:10px;'></a></div>
+                    <SELECT class='arredondar' size=1 OB='n' NO='EAD Technology' name='dtchnlgy'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Basic'>Basic</OPTION>
+                        <OPTION value='Regular'>Regular</OPTION>
+                        <OPTION value='Advanced'>Advanced</OPTION>
+                        <OPTION value='Premium'>Premium</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div class='espaço'>Sistema cliente oculto </div><SELECT class='arredondar'
+                        NO='Sistema cliente oculto' name='sstmclntclt'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='novas perguntas'>novas perguntas</OPTION>
+                        <OPTION value='perguntas padrão'>perguntas padrão</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_'>-----------</div>
+                </div>
+                <div class='espaço'>
+                    <div id='label_prcls'>Parcelas</div><SELECT class='arredondar' size=1 OB='n' NO='Parcelas'
+                        name='prcls'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='1'>1</OPTION>
+                        <OPTION value='2'>2</OPTION>
+                        <OPTION value='3'>3</OPTION>
+                        <OPTION value='4'>4</OPTION>
+                        <OPTION value='5'>5</OPTION>
+                        <OPTION value='6'>6</OPTION>
+                        <OPTION value='7'>7</OPTION>
+                        <OPTION value='8'>8</OPTION>
+                        <OPTION value='9'>9</OPTION>
+                        <OPTION value='10'>10</OPTION>
+                        <OPTION value='11'>11</OPTION>
+                        <OPTION value='12'>12</OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_prz'>Prazo</div><SELECT class='arredondar' size=1 OB='n' NO='Prazo' name='prz'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Urgente'>Urgente</OPTION>
+                        <OPTION value='Normal'>Normal</OPTION>
+                        <OPTION value='Sem pressa - mais barato'>Sem pressa - mais barato</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_xclsvdd'>Exclusividade</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Exclusividade' name='xclsvdd'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='sim'>sim</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_pctmrgnclcrnvrs'>Pacote emergencial Coronavírus</div><SELECT class='arredondar'
+                        size=1 OB='n' NO='Pacote emergencial Coronavírus' name='pctmrgnclcrnvrs'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='sim'>sim</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_md'>Moeda</div><SELECT class='arredondar' size=1 OB='n' NO='Moeda' name='md'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Real'>Real</OPTION>
+                        <OPTION value='Dolar'>Dolar</OPTION>
+                        <OPTION value='Euro'>Euro</OPTION>
+                        <OPTION value='Metical'>Metical</OPTION>
+                        <OPTION value='Rand'>Rand</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_<b>mntnc<b>'><B>Manutenção</B></div>
+                </div>
+                <div class='espaço'>
+                    <div id='label_pgnscmfdbck'>Páginas com FeedBack <a href='http://k2web.com.br/app_Feedback'
+                            target='_blank'><img src='https://www.k2web.com.br/help.png' style='width:10px;'></a></div>
+                    <SELECT class='arredondar' size=1 OB='n' NO='Páginas com FeedBack' name='pgnscmfdbck'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='1 página'>1 página</OPTION>
+                        <OPTION value='2 páginas'>2 páginas</OPTION>
+                        <OPTION value='3 páginas'>3 páginas</OPTION>
+                        <OPTION value='4 páginas'>4 páginas</OPTION>
+                        <OPTION value='5 páginas'>5 páginas</OPTION>
+                        <OPTION value='6 páginas'>6 páginas</OPTION>
+                        <OPTION value='7 páginas'>7 páginas</OPTION>
+                        <OPTION value='8 páginas'>8 páginas</OPTION>
+                        <OPTION value='9 páginas'>9 páginas</OPTION>
+                        <OPTION value='10 páginas'>10 páginas</OPTION>
+                        <OPTION value='até 15 páginas'>até 15 páginas</OPTION>
+                        <OPTION value='até 20 páginas'>até 20 páginas</OPTION>
+                        <OPTION value='até 30 páginas'>até 30 páginas</OPTION>
+                        <OPTION value='até 50 páginas'>até 50 páginas</OPTION>
+                        <OPTION value='ilimitado'>ilimitado</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_lmtmltdr'>Limite MailTo diário</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Limite MailTo diário' name='lmtmltdr'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='50'>50</OPTION>
+                        <OPTION value='500'>500</OPTION>
+                        <OPTION value='1000'>1000</OPTION>
+                        <OPTION value='1500'>1500</OPTION>
+                        <OPTION value='2000'>2000</OPTION>
+                        <OPTION value='5000'>5000</OPTION>
+                        <OPTION value='10000'>10000</OPTION>
+                        <OPTION value='20000'>20000</OPTION>
+                        <OPTION value='50000'>50000</OPTION>
+                        <OPTION value='100000'>100000</OPTION>
+                        <OPTION value='200000'>200000</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_lmpzdmllng'>Limpeza de mailling <a
+                            href='javascript:alert("durante o envio realiza checagem se o e-mail existe antes de enviar")'><img
+                                src='https://www.k2web.com.br/help.png' style='width:10px;'></a></div><SELECT
+                        class='arredondar' size=1 OB='n' NO='Limpeza de mailling' name='lmpzdmllng'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='sim'>sim</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_cntsdml'>Contas de email</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Contas de email' name='cntsdml'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='até 10'>até 10</OPTION>
+                        <OPTION value='até 20'>até 20</OPTION>
+                        <OPTION value='até 30'>até 30</OPTION>
+                        <OPTION value='até 50'>até 50</OPTION>
+                        <OPTION value='até 100'>até 100</OPTION>
+                        <OPTION value='até 200'>até 200</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_lmtxtrdrmznmnt'>Limite extra de armazenamento</div><SELECT class='arredondar' size=1
+                        OB='n' NO='Limite extra de armazenamento' name='lmtxtrdrmznmnt'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='1GB'>1GB</OPTION>
+                        <OPTION value='2GB'>2GB</OPTION>
+                        <OPTION value='3GB'>3GB</OPTION>
+                        <OPTION value='5GB'>5GB</OPTION>
+                        <OPTION value='10GB'>10GB</OPTION>
+                        <OPTION value='15GB'>15GB</OPTION>
+                        <OPTION value='20GB'>20GB</OPTION>
+                        <OPTION value='50GB'>50GB</OPTION>
+                        <OPTION value='100GB'>100GB</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_lmtxtrdtrfgddds'>Limite extra de tráfego de dados</div><SELECT class='arredondar'
+                        size=1 OB='n' NO='Limite extra de tráfego de dados' name='lmtxtrdtrfgddds'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='1GB'>1GB</OPTION>
+                        <OPTION value='2GB'>2GB</OPTION>
+                        <OPTION value='3GB'>3GB</OPTION>
+                        <OPTION value='5GB'>5GB</OPTION>
+                        <OPTION value='10GB'>10GB</OPTION>
+                        <OPTION value='15GB'>15GB</OPTION>
+                        <OPTION value='20GB'>20GB</OPTION>
+                        <OPTION value='50GB'>50GB</OPTION>
+                        <OPTION value='100GB'>100GB</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_lmtdsmsdr'>Limite de SMS diário</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Limite de SMS diário' name='lmtdsmsdr'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='50'>50</OPTION>
+                        <OPTION value='500'>500</OPTION>
+                        <OPTION value='1000'>1000</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_hrsmnss'>Horas mensais</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Horas mensais' name='hrsmnss'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='1'>1</OPTION>
+                        <OPTION value='2'>2</OPTION>
+                        <OPTION value='3'>3</OPTION>
+                        <OPTION value='4'>4</OPTION>
+                        <OPTION value='5'>5</OPTION>
+                        <OPTION value='6'>6</OPTION>
+                        <OPTION value='7'>7</OPTION>
+                        <OPTION value='8'>8</OPTION>
+                        <OPTION value='9'>9</OPTION>
+                        <OPTION value='10'>10</OPTION>
+                        <OPTION value='20'>20</OPTION>
+                        <OPTION value='30'>30</OPTION>
+                        <OPTION value='40'>40</OPTION>
+                        <OPTION value='50'>50</OPTION>
+                        <OPTION value='60'>60</OPTION>
+                        <OPTION value='70'>70</OPTION>
+                        <OPTION value='100'>100</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_cnsltr'>Consultoria</div><SELECT class='arredondar' size=1 OB='n' NO='Consultoria'
+                        name='cnsltr'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Análise mensal com reunião virtual'>Análise mensal com reunião virtual</OPTION>
+                        <OPTION value='Análise mensal com reunião Presencial'>Análise mensal com reunião Presencial
+                        </OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_chtllwb'>Chat Alloweb <a href='http://k2web.com.br/app_chatAlloweb'
+                            target='_blank'><img src='https://www.k2web.com.br/help.png' style='width:10px;'></a></div>
+                    <SELECT class='arredondar' size=1 OB='n' NO='Chat Alloweb' name='chtllwb'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Básico'>Básico</OPTION>
+                        <OPTION value='Full'>Full</OPTION>
+                        <OPTION value='Full com atendimento'>Full com atendimento</OPTION>
+                        <OPTION value='Com video WhereBy ou similar'>Com video WhereBy ou similar</OPTION>
+                        <OPTION value='Não'>Não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_llwbwhtsppbsnss'>Alloweb Whatsapp Business <a href='http://k2web.com.br/app_Whatsapp'
+                            target='_blank'><img src='https://www.k2web.com.br/help.png' style='width:10px;'></a></div>
+                    <SELECT class='arredondar' size=1 OB='n' NO='Alloweb Whatsapp Business' name='llwbwhtsppbsnss'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Androy Atende'>Androy Atende</OPTION>
+                        <OPTION value='Basic'>Basic</OPTION>
+                        <OPTION value='Medium'>Medium</OPTION>
+                        <OPTION value='Advanced'>Advanced</OPTION>
+                        <OPTION value='Premium'>Premium</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_crmplcn'>CRM PlaceIn <a href='http://k2web.com.br/app_crmPlacein'
+                            target='_blank'><img src='https://www.k2web.com.br/help.png' style='width:10px;'></a></div>
+                    <SELECT class='arredondar' size=1 OB='n' NO='CRM PlaceIn' name='crmplcn'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='sim'>sim</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_tpsts'>AutoPosts <a href='http://k2web.com.br/app_Autopost' target='_blank'><img
+                                src='https://www.k2web.com.br/help.png' style='width:10px;'></a></div><SELECT
+                        class='arredondar' size=1 OB='n' NO='AutoPosts' name='tpsts'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Facebook'>Facebook</OPTION>
+                        <OPTION value='Facebook e Linkedin'>Facebook e Linkedin</OPTION>
+                        <OPTION value='Facebook e Instagram'>Facebook e Instagram</OPTION>
+                        <OPTION value='Não'>Não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_mntncrdsscs'>Manutenção Redes Sociais</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Manutenção Redes Sociais' name='mntncrdsscs'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='até 2 contas somente postagem'>até 2 contas somente postagem</OPTION>
+                        <OPTION value='até 4 contas somente postagem'>até 4 contas somente postagem</OPTION>
+                        <OPTION value='até 2 contas com postagem e interações'>até 2 contas com postagem e interações
+                        </OPTION>
+                        <OPTION value='até 4 contas com postagem e interações'>até 4 contas com postagem e interações
+                        </OPTION>
+                        <OPTION value=''></OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_trspndr'>AutoResponder</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='AutoResponder' name='trspndr'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='sim'>sim</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_dmnstrcnncs'>Administração anúncios</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Administração anúncios' name='dmnstrcnncs'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Para verbas de mídia de até R$ 100'>Para verbas de mídia de até R$ 100</OPTION>
+                        <OPTION value='Para verbas de mídia de até R$ 500'>Para verbas de mídia de até R$ 500</OPTION>
+                        <OPTION value='Para verbas de mídia de até R$ 1.000'>Para verbas de mídia de até R$ 1.000
+                        </OPTION>
+                        <OPTION value='Para verbas de mídia de até R$ 2.000'>Para verbas de mídia de até R$ 2.000
+                        </OPTION>
+                        <OPTION value='Para verbas de mídia de até R$ 4.000'>Para verbas de mídia de até R$ 4.000
+                        </OPTION>
+                        <OPTION value='Para verbas de mídia de até R$ 10.000'>Para verbas de mídia de até R$ 10.000
+                        </OPTION>
+                        <OPTION value='Para verbas de mídia de até R$ 20.000'>Para verbas de mídia de até R$ 20.000
+                        </OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_tstsbcprnncs'>Testes ABC para anúncios</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Testes ABC para anúncios' name='tstsbcprnncs'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Sim'>Sim</OPTION>
+                        <OPTION value='Não'>Não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_cnlytb'>Canal Youtube <a href='http://www.smartmovie.com.br' target='_blank'><img
+                                src='https://www.k2web.com.br/help.png' style='width:10px;'></a></div><SELECT
+                        class='arredondar' size=1 OB='n' NO='Canal Youtube' name='cnlytb'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Basic'>Basic</OPTION>
+                        <OPTION value='Advanced'>Advanced</OPTION>
+                        <OPTION value='Premium'>Premium</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_prfssnlxclsv'>Profissional Exclusivo</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Profissional Exclusivo' name='prfssnlxclsv'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='sim'>sim</OPTION>
+                        <OPTION value='somente meio periodo'>somente meio periodo</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_grcdcntd'>Geração de conteúdo</div><SELECT class='arredondar' size=1 OB='n'
+                        NO='Geração de conteúdo' name='grcdcntd'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='até 5 laudas'>até 5 laudas</OPTION>
+                        <OPTION value='até 10 laudas'>até 10 laudas</OPTION>
+                        <OPTION value='até 20 laudas'>até 20 laudas</OPTION>
+                        <OPTION value='50 laudas'>50 laudas</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_trdc'>Tradução</div><SELECT class='arredondar' size=1 OB='n' NO='Tradução'
+                        name='trdc'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='até 5 laudas'>até 5 laudas</OPTION>
+                        <OPTION value='até 10 laudas'>até 10 laudas</OPTION>
+                        <OPTION value='até 20 laudas'>até 20 laudas</OPTION>
+                        <OPTION value='50 laudas'>50 laudas</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_sprss'>SEOpress <a href='http://seopress.com.br' target='_blank'><img
+                                src='https://www.k2web.com.br/help.png' style='width:10px;'></a></div><SELECT
+                        class='arredondar' size=1 OB='n' NO='SEOpress' name='sprss'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='SEOpress Basic'>SEOpress Basic</OPTION>
+                        <OPTION value='SEOpress I'>SEOpress I</OPTION>
+                        <OPTION value='SEOpress II'>SEOpress II</OPTION>
+                        <OPTION value='SEOpress III'>SEOpress III</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_lgcssmnsclntclt'>Ligações semanais cliente oculto</div><INPUT class='arredondar'
+                        TYPE=TEXT NAME='lgcssmnsclntclt' VALUE='' MAXLENGHT=200 OB=''
+                        NO='Ligações semanais cliente oculto'>
+                </div>
+                <div class='espaço'>
+                    <div id='label_srvdr'>Servidor</div><SELECT class='arredondar' size=1 OB='n' NO='Servidor'
+                        name='srvdr'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Compartilhado'>Compartilhado</OPTION>
+                        <OPTION value='Dedicado'>Dedicado</OPTION>
+                        <OPTION value='Com banco de dados para sistema'>Com banco de dados para sistema</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_bckp'>Backup</div><SELECT class='arredondar' size=1 OB='n' NO='Backup' name='bckp'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='Diário na Amazon'>Diário na Amazon</OPTION>
+                        <OPTION value='Semanal na Amazon'>Semanal na Amazon</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div class='espaço'>
+                    <div id='label_nmr0800'>Número 0800 <a href='https://k2web.com.br/app_tel0800' target='_blank'><img
+                                src='https://www.k2web.com.br/help.png' style='width:10px;'></a></div><SELECT
+                        class='arredondar' size=1 OB='n' NO='Número 0800' name='nmr0800'>
+                        <OPTION value=> </OPTION>
+                        <OPTION value='0800Basic'>0800Basic</OPTION>
+                        <OPTION value='0800Full'>0800Full</OPTION>
+                        <OPTION value='0800Advanced'>0800Advanced</OPTION>
+                        <OPTION value='não'>não</OPTION>
+                        <OPTION value=' ' SELECTED> </OPTION>
+                    </SELECT>
+                </div>
+                <div id='avisoGF'></div>
+                <div class='espaço'>Dados seguros: <a href='https://www.k2web.com.br/politicadeprivacidade_geral.html'
+                        target='_blank'>Política de privacidade</a></div>
+                <div id='botaoenviar'><input class="btn btn-red" type='submit' value='Calcular' /></div>
+            </form>
+            <div id='GFerro' style='left:-5000'></div>
+            <div id='help' style='left:-5000'></div>
+        </div>
+        <script>
+            var stepsForm_calculadora = 0;
+            var stepAtualForm_calculadora = 1;
+            if (stepsForm_calculadora != 0 && 'off' != 'off') {
+                var layoutsteps = '<header style="position: relative;z-index: 1;"><nav class="ferramentas" style="display: flex; justify-content: space-around; align-items: center;"><a href="javascript:return false" class="btn-step-1 btn btn-primary disabled" style="margin: 0 20px;width: 100%"> 1 </a>';
+                $('#b_enviar,.btn-previus').css('display', 'none');
+                for (var i = 2; i <= stepsForm_calculadora; i++) {
+                    $('.step' + i).css('display', 'none');
+                    layoutsteps += '<a href="javascript:return false" class="btn-step-' + i + ' btn btn-default disabled" style="margin: 0 20px;width: 100%"> ' + i + ' </a>';
+                }
+                layoutsteps += '</nav><hr style="border-top: 1px solid #eee;" /></header>';
+                $('#layout-steps').html(layoutsteps);
+                function next(objeto) {
+                    if (stepAtualForm_calculadora + 1 <= stepsForm_calculadora) {
+                        $('.step' + stepAtualForm_calculadora).css('display', 'none');
+                        stepAtualForm_calculadora++;
+                        $('.step' + stepAtualForm_calculadora).css('display', 'block');
+                        if (stepAtualForm_calculadora == stepsForm_calculadora) {
+                            $('.btn-next').css('display', 'none');
+                            $('#b_enviar').css('display', 'block');
+                        } else {
+                            $('.btn-next').css('display', 'block');
+                        }
+                        $('.btn-step-' + stepAtualForm_calculadora).removeClass('btn-default').addClass('btn-primary')
+                        $('.btn-previus').css('display', 'block');
+                    }
+                    console.log('next')
+                }
+                function previus(objeto) {
+                    if (stepAtualForm_calculadora - 1 > 0) {
+                        $('.btn-step-' + stepAtualForm_calculadora).addClass('btn-default').removeClass('btn-primary')
+                        $('#b_enviar').css('display', 'none');
+                        $('.step' + stepAtualForm_calculadora).css('display', 'none');
+                        stepAtualForm_calculadora--;
+                        $('.step' + stepAtualForm_calculadora).css('display', 'block');
+                        if (stepAtualForm_calculadora == 1) {
+                            $('.btn-previus').css('display', 'none');
+                        } else {
+                            $('.btn-previus').css('display', 'block');
+                        }
+                        $('.btn-next').css('display', 'block');
+                    }
+                    console.log('previus')
+                }
+            }
+            $("#input_cp").keyup(function (e) {
+                e.preventDefault();
+                var input = $(this);
+                var cep = input.val();
+                var len = cep.length;
+                var url = "https://viacep.com.br/ws/" + cep + "/json";
+                if (len === 9) {
+                    cep = cep.replace(/[^0-9.,]*/g, '');
+                    input.parent().append("<p class='load'>Aguarde obtendo endere�o...</p>");
+                    $.getJSON(url, function (response) {
+                        if (!response.erro) {
+                            $(".load").fadeOut(200, function () {
+                                $(this).remove();
+                                $("#input_cdd").val(response.localidade);
+                                $("#input_std").val(response.uf);
+                                $("[name='f']").val(response.uf);
+                                $("#f input").val(response.uf);
+
+                                $("#input_ndrc").val(response.logradouro);
+                                $("#input_brr").val(response.bairro);
+                            });
+                        } else {
+                            if ($(".load").length) {
+                                $(".load").fadeOut(200, function () {
+                                    $(this).remove();
+                                    input.parent().append("<p>Erro ao consultar o endere�o!</p>");
+                                });
+                            } else {
+                                input.parent().append("<p>Erro ao consultar o endere�o!</p>");
+                            }
+                            input.parent().append("<p>Endere�o n�o encontrato!</p>");
+                        }
+                    });
+                }
+            });
+        </script>
+</body>
+
+</html>
